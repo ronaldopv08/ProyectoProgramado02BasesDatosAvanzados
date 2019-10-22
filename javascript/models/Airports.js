@@ -16,24 +16,26 @@ const airportsSchema = new Schema({
         type: String,
         required: true, 
     },
-    description: {
+    state: {
         type:String,
         required: true
     },
-    qSold: {
-        type:Number,
-        default: 0
-    },
-    qAvailable: {
-        type:Number,
+    address: {
+        type:String,
         required: true
     },
-    price: {
+    email: {
+        type:String,
+        required: true
+    },
+    telephone: {
         type: Number,
         required: true
     },
-    idLibrary:{
+    webPage:{
         type:String,
-        default: 1
+        require: true
     }
 });
+
+module.exports = mongoose.model("Airports", airportsSchema);
