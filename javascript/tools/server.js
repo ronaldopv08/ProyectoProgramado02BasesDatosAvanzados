@@ -33,6 +33,8 @@ router.get('/flights', flightsRoutes);
 purchasesRoutes(router)
 router.get('/purchases', purchasesRoutes);
 
+app.use('/api', router);
+
 app.use(router);
 
 
