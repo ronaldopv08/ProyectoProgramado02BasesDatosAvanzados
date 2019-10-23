@@ -1,44 +1,44 @@
-const Airports = require('../models/Airports');
+const airports = require('../models/airports');
 
 exports.createAirport = async (req, res) => {
-    const airport = new Airports(req.body);
-    await airport.save((err, airport)=>{
+    const airports= new airports(req.body);
+    await airports.save((err, airport)=>{
         if(err) console.log(err);
-        res.redirect("/airports")
+      //  res.redirect("/airports")
     })
 }
 
 exports.getAirports = async (req, res) => {
-    const airports = await Airports.find();
-    res.render("AdminViews/booksView", {airports});
+    const airports = await airports.find();
+   // res.render("AdminViews/booksView", {airports});
 }
 
 exports.deleteAirport = async (req, res) => {
     const { id } = req.params;
-    await Airports.deleteOne({_id : id }, (err)=>{
+    await airports.deleteOne({_id : id }, (err)=>{
         if(err){
             console.log(err);
         } else{
-            res.redirect("/books");
+      //      res.redirect("/books");
         }
     });
 }
 
 exports.findAirport = async (req,res)=>{
     const {id} = req.params;
-    await Airports.findById({_id : id}, (err, book)=>{
+    await airports.findById({_id : id}, (err, airports)=>{
         if (err){
             console.log(err);
         } else{
-            res.render("AdminViews/updateBookView", {book});
+           // res.render("AdminViews/updateBookView", {book});
         }
     });
 }
 
 exports.updateAirport = async (req, res) => {
     const { id } = req.params;
-    await Airports.update({_id : id}, req.body, (err, book)=>{
+    await airports.update({_id : id}, req.body, (err, airports)=>{
         if(err) console.log(err);
-        res.redirect('/books')
+       // res.redirect('/books')
     })
 }
