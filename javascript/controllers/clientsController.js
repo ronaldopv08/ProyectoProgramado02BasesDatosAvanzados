@@ -1,4 +1,4 @@
-const Clients = require('../models/Clients');
+const clients = require('../models/Clients');
 
 exports.createClients =  async (req, res) => {
     const client = new Clients(req.body);
@@ -9,13 +9,13 @@ exports.createClients =  async (req, res) => {
 }
 
 exports.getClients = async (req, res) => {
-    const clients = await Clients.find();
+    const clients = await clients.find();
     //res.render("AdminViews/clientsView", {clients});
 }
 
 exports.deleteClient = async (req, res) => {
     const { id } = req.params;
-    await Clients.deleteOne({_id : id }, (err)=>{
+    await clients.deleteOne({_id : id }, (err)=>{
         if(err){
             console.log(err);
         } else{
@@ -26,7 +26,7 @@ exports.deleteClient = async (req, res) => {
 
 exports.findClient = async (req,res)=>{
     const {id} = req.params;
-    await Clients.findById({_id : id}, (err, client)=>{
+    await clients.findById({_id : id}, (err, client)=>{
         if (err){
             console.log(err);
         } else{
@@ -37,8 +37,9 @@ exports.findClient = async (req,res)=>{
 
 exports.updateClient = async (req, res) => {
     const { id } = req.params;
-    await Client.update({_id : id}, req.body, (err, client)=>{
+    await client.update({_id : id}, req.body, (err, client)=>{
         if(err) console.log(err);
         //res.redirect('/books')
     });
 }
+
