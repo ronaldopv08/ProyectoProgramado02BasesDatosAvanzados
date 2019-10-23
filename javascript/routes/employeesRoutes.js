@@ -4,7 +4,7 @@ module.exports = (router) => {
     //CRUD de employees
     router.get('/employees', employees.getEmployees);
     router.post('/addEmployees', employees.createEmployees);
-    router.get('/deleteEmployees/:id', employees.deleteEmployees);
-    router.get('/findEmployees/:id', employees.findEmployees);
-    router.post('/editEmployees/:id', employees.updateEmployees);
+    router.get('/deleteEmployee/:id', employees.deleteEmployee);
+    router.get('/findEmployee/:id', employees.findEmployee);
+    router.post('/editEmployee/:id', employees.updateEmployee);
 }
