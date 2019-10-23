@@ -20,16 +20,18 @@ module.exports= () =>{
     .catch(err => console.log(err));
 }
 
-userRoutes(router)
-router.get('/', userRoutes);
-booksRoutes(router)
-router.get('/books', booksRoutes);
-librariesRoutes(router)
-router.get('/libraries', librariesRoutes);
-salesRoutes(router)
-router.get('/sales', salesRoutes);
-deliveriesRoutes(router)
-router.get('/deliveries', deliveriesRoutes);
+clientsRoutes(router)
+router.get('/clients', clientsRoutes);
+airportsRoutes(router)
+router.get('/airports', airportsRoutes);
+airlinesRoutes(router)
+router.get('/airlines', airlinesRoutes);
+employeesRoutes(router)
+router.get('/employees', employeesRoutes);
+flightsRoutes(router)
+router.get('/flights', flightsRoutes);
+purchasesRoutes(router)
+router.get('/purchases', purchasesRoutes);
 
 app.use(router);
 
