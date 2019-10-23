@@ -37,5 +37,3 @@ const airportsSchema = new Schema({
         require: true
     }
 });
-
-module.exports = mongoose.model("Airports", airportsSchema);
