@@ -57,43 +57,89 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="list-tab">
-            <label>Enter the clint information:</label>
-            <ul>
-                <label for="clientId">Client ID:</label>
-                <input type="text" name="clientIdInput"><br>
-                <label for="clientFirstName">First Name:</label>
-                <input type="text" name="clientFirstNameInput"><br>
-                <label for="clientLastName">Last Name:</label>
-                <input type="text" name="clientLastNameInput"><br>
-                <label for="clientBirthDate">Birth Date:</label>
-                <input type="text" name="clientBirthDateInput"><br>
-                <label for="clientNationality">Nationality:</label>
-                <input type="text" name="clientNationalityInput"><br>
-                <label for="clientCountry">Country:</label>
-                <input type="text" name="clientCountryInput"><br>
-                <label for="clientState">State:</label>
-                <input type="text" name="clientStateInput"><br>
-                <label for="clientAddress">Address:</label>
-                <input type="text" name="clientAddressInput"><br>
-                <label for="clientEmail">Email:</label>
-                <input type="text" name="clientEmailInput"><br>
-                <label for="clientPassword">User password:</label>
-                <input type="text" name="clientPasswordInput"><br>
-                <label for="clientPhoneNumbers">Phone Numbers:</label>
-                <input type="text" name="clientPhoneNumbers"><br>
-            </ul>
-				
+                <label>Enter the clint information:</label>
+                <form>
+                        Client ID: <br>
+                        <input type="text" name="clientIdInput"><br>
+                        First Name: <br>
+                        <input type="text" name="clientFirstNameInput"><br>
+                        Last Name: <br>
+                        <input type="text" name="clientLastNameInput"><br>
+                        Birth Date: <br>
+                        <input type="date" id="birthDateInputId" name="birthDateInput"> <br>
+                        Nationality: <br>
+                        <input type="text" name="clientNationalityInput"><br>
+                        Country: <br><br>
+                        <select id="countryCreate" name ="countryCreate"></select> </br></br>
+                        State: <br><br>
+                        <select name ="stateCreate" id ="stateCreate"></select>  </br> </br>
+                        <script src="../javascript/tools/countriesStates.js"></script>
+                        <script language="javascript">
+                        populateCountries("countryCreate", "stateCreate");
+                    </script>
+                        Address: <br>
+                        <input type="text" name="clientAddressInput"><br>
+                        Email: <br>
+                        <input type="text" name="clientEmailInput"><br>
+                        User password: <br>
+                        <input type="password" name="clientPasswordInput"><br>
+                        Phone Numbers: <br>
+                        <textarea name="clientPhoneNumbersInput" id="clientPhoneNumbersInput"></textarea><br>
+                        <button type="submit">Save</button>
+                    </form>
 			</div>
 			<div class="tab-pane fade" id="modify" role="tabpanel" aria-labelledby="form-tab">
-			<label>Enter the clint new information:</label>	
-						
+			    <label>Enter the client new information:</label>
+                <ul>
+                    Client ID: <br>
+                    <input type="text" name="clientIdInput"><br>
+                    First Name: <br>
+                    <input type="text" name="clientFirstNameInput"><br>
+                    Last Name: <br>
+                    <input type="text" name="clientLastNameInput"><br>
+                    Birth Date: <br>
+                    <input type="date" id="birthDateInputId" name="birthDateInput"><br>
+                    Nationality: <br>
+                    <input type="text" name="clientNationalityInput"><br>
+                    Country: <br><br>
+                    <select id="countryModify" name ="countryModify"></select> </br></br>
+                    State: <br><br> 
+                    <select name ="stateModify" id ="stateModify"></select>  </br> </br>
+                    <script src="../javascript/tools/countriesStates.js"></script>
+                    <script language="javascript">
+                    populateCountries("countryModify", "stateModify");
+                </script>
+                    Address: <br>
+                    <input type="text" name="clientAddressInput"><br>
+                    Email: <br>
+                    <input type="text" name="clientEmailInput"><br>
+                    User password: <br>
+                    <input type="password" name="clientPasswordInput"><br>
+                    Phone Numbers: <br>
+                    <textarea name="clientPhoneNumbersInput" id="clientPhoneNumbersInput"></textarea><br>
+            </ul>
             </div>
             <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="form-tab">
-			<label>Enter the clint id:</label>	
-						
+            <label>Enter the clint ID:</label><br>
+            <input type="text" name="clientIDInput"> <br>
+            <button type="submit">Delete</button><br>
+            <label for="deleteActionStatus">Delete Status: N/A</label>
             </div>
             <div class="tab-pane fade" id="consult" role="tabpanel" aria-labelledby="form-tab">
-                <label>consult</label>	
+                <label>Enter the client ID:</label>
+                <input type="text" id="clientIdInput"><br>
+                <table>
+                    <tr>ID</tr>
+                    <tr>First Name</tr>
+                    <tr>Last Name</tr>
+                    <tr>Birth Date</tr>
+                    <tr>Nationality</tr>
+                    <tr>Country</tr>
+                    <tr>State</tr>
+                    <tr>Address</tr>
+                    <tr>Email</tr>
+                    <tr>Phone Numbers</tr>
+                </table>	
                                 
             </div>
 			</div>
