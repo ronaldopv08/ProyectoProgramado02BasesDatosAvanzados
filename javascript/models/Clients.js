@@ -2,7 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 mongoose.set('useCreateIndex', true);
 
-const ClientsSchema = new Schema({
+const clientPhoneNumbersSchema = new Schema({
+    telephones: {
+        type: Array,
+        required: true
+    }
+});
+
+module.exports = mongoose.model("ClientsPhoneNumbers",clientPhoneNumbersSchema);
+
+const clientsSchema = new Schema({
     id: {
         type: Number,
         required: true, 
@@ -32,10 +41,6 @@ const ClientsSchema = new Schema({
         type: String,
         required: true, 
     },
-    state: {
-        type: String,
-        required: true, 
-    },
     address: {
         type: String,
         required: true, 
@@ -54,4 +59,4 @@ const ClientsSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Clients",ClientsSchema);
+module.exports = mongoose.model("Clients",clientsSchema);
