@@ -37,7 +37,7 @@ exports.findAirline = async (req,res)=>{
 
 exports.updateAirline = async (req, res) => {
     const { id } = req.params;
-    await airline.update({_id : id}, req.body, (err, airlines)=>{
+    await airlines.update({_id : id}, req.body, (err, airlines)=>{
         if(err) console.log(err);
         //res.redirect('/books')
     });

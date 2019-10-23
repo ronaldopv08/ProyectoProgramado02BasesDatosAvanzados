@@ -1,8 +1,8 @@
 const airports = require('../models/airports');
 
 exports.createAirport = async (req, res) => {
-    const airport = new airports(req.body);
-    await airport.save((err, airport)=>{
+    const airports= new airports(req.body);
+    await airports.save((err, airport)=>{
         if(err) console.log(err);
       //  res.redirect("/airports")
     })

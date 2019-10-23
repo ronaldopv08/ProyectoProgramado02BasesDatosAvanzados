@@ -2,7 +2,7 @@ const clients = require('../controllers/clientsController');
 
 module.exports = (router) => {
     //CRUD de clients
-    router.get('/Clients', clients.getClients);
+    router.get('/clients', clients.getClients);
     router.post('/addClients', clients.createClients);
     router.get('/deleteClient/:id', clients.deleteClient);
     router.get('/findClient/:id', clients.findClient);
