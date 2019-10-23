@@ -1,7 +1,7 @@
-const clients = require('../models/Clients');
+const clients = require('../models/clients');
 
 exports.createClients =  async (req, res) => {
-    const client = new Clients(req.body);
+    const client = new clients(req.body);
     await client.save((err, client)=>{
         if(err) console.log(err);
         //res.redirect("/clients")

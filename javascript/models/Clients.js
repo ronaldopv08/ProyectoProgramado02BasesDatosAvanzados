@@ -2,8 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 mongoose.set('useCreateIndex', true);
 
-<<<<<<< HEAD
-=======
 const clientPhoneNumbersSchema = new Schema({
     telephones: {
         type: Array,
@@ -11,9 +9,8 @@ const clientPhoneNumbersSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("ClientsPhoneNumbers",clientPhoneNumbersSchema);
+module.exports = mongoose.model("clientsPhoneNumbers",clientPhoneNumbersSchema);
 
->>>>>>> e1010494dd1d6f2ab75f3b27ecf6495a95e9acd9
 const clientsSchema = new Schema({
     id: {
         type: Number,
@@ -62,4 +59,4 @@ const clientsSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Clients",clientsSchema);
+module.exports = mongoose.model("clients",clientsSchema);

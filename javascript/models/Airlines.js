@@ -22,4 +22,4 @@ const airlinesSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Airlines", airlinesSchema);
+module.exports = mongoose.model("airlines", airlinesSchema);
