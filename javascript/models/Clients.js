@@ -9,7 +9,7 @@ const clientPhoneNumbersSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("ClientsPhoneNumbers",clientPhoneNumbersSchema);
+module.exports = mongoose.model("clientsPhoneNumbers",clientPhoneNumbersSchema);
 
 const clientsSchema = new Schema({
     id: {
@@ -59,4 +59,4 @@ const clientsSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model("Clients",clientsSchema);
+module.exports = mongoose.model("clients",clientsSchema);

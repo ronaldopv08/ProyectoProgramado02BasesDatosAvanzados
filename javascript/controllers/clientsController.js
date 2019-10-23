@@ -1,8 +1,8 @@
-const clients = require('../models/Clients');
+const clients = require('../models/clients');
 
 exports.createClients =  async (req, res) => {
-    const client = new Clients(req.body);
-    await client.save((err, client)=>{
+    const clients = new clients(req.body);
+    await clients.save((err, client)=>{
         if(err) console.log(err);
         //res.redirect("/clients")
     })
@@ -37,7 +37,7 @@ exports.findClient = async (req,res)=>{
 
 exports.updateClient = async (req, res) => {
     const { id } = req.params;
-    await client.update({_id : id}, req.body, (err, client)=>{
+    await clients.update({_id : id}, req.body, (err, client)=>{
         if(err) console.log(err);
         //res.redirect('/books')
     });

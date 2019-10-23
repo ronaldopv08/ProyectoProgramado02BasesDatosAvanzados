@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>User Information and Form</title>
-	
+    <title>Airlines</title>
+    <script type="text/javascript" src="../javascript/tools/countriesStates.js"></script>
 	<!--JQUERY-->
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,45 +31,67 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">	
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 
-	<script type="text/javascript">
-	    $(document).ready(function() {
-	        //Asegurate que el id que le diste a la tabla sea igual al texto despues del simbolo #
-	        $('#userList').DataTable();
-	    } );
-	</script>
 </head>
 <body>
 	<div class="container">
 	<div class="mx-auto col-sm-8 main-section" id="myTab" role="tablist">
 		<ul class="nav nav-tabs justify-content-end">
 			<li class="nav-item">
-			<a class="nav-link active" id="list-tab" data-toggle="tab" href="#create" role="tab" aria-controls="list" aria-selected="false">Create</a>
+			<a class="nav-link active" id="create-tab" data-toggle="tab" href="#create" role="tab" aria-controls="create" aria-selected="false">Create</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" id="form-tab" data-toggle="tab" href="#modify" role="tab" aria-controls="form" aria-selected="true">Modify</a>				   	
+			<a class="nav-link" id="modify-tab" data-toggle="tab" href="#modify" role="tab" aria-controls="modify" aria-selected="true">Modify</a>				   	
             </li>
             <li class="nav-item">
-            <a class="nav-link" id="form-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="form" aria-selected="true">Delete</a>				   	
+            <a class="nav-link" id="delete-tab" data-toggle="tab" href="#delete" role="tab" aria-controls="delete" aria-selected="true">Delete</a>				   	
             </li>
             <li class="nav-item">
-            <a class="nav-link" id="form-tab" data-toggle="tab" href="#consult" role="tab" aria-controls="form" aria-selected="true">Consult</a>				   	
+            <a class="nav-link" id="consult-tab" data-toggle="tab" href="#consult" role="tab" aria-controls="consult" aria-selected="true">Consult</a>				   	
             </li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="list-tab">
-			<label>create</label>	
+			<div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="create-tab">
+                    <form>
+                            Airport ID:<br>
+                            <input type="text" name="idAirport"> </br>
+                            Name:<br>
+                            <input type="text" name="airlineName"></br>
+                            Select Country (with states):   
+                            <select id="countryC" name ="countryC"></select></br>
+                            <input type="button" name="Select" value="Select">
+                    </form>
 				
 			</div>
-			<div class="tab-pane fade" id="modify" role="tabpanel" aria-labelledby="form-tab">
-			<label>modify</label>	
+			<div class="tab-pane fade" id="modify" role="tabpanel" aria-labelledby="modify-tab">	
+                <form>
+                        Airline ID:
+                        <select></select> <br>
+                        Airport ID:<br>
+                        <input type="text" name="idAirport"> </br>
+                        Name:<br>
+                        <input type="text" name="airlineName"></br>
+                        Select Country (with states):   
+                        <select id="country" name ="country"></select></br>
+                        <input type="button" name="Modify" value="Modify">
+                </form>
 						
             </div>
-            <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="form-tab">
-			<label>delete</label>	
+            <div class="tab-pane fade" id="delete" role="tabpanel" aria-labelledby="delete-tab">
+                Airline ID:
+                <input type="text" name="idAirline"> </br>
+                <input type="button" name="Delete" value="Delete">
+
+                
 						
             </div>
-            <div class="tab-pane fade" id="consult" role="tabpanel" aria-labelledby="form-tab">
-                <label>consult</label>	
+            <div class="tab-pane fade" id="consult" role="tabpanel" aria-labelledby="consult-tab">
+                	Airline ID:
+                    <input type="text" name="idAirline"> <br>
+                    <input type="button" name="consult" value="Consult"></br>
+                    Airport ID:<br>
+                    Name:<br>
+                    Select Country (with states):<br>   
+                    
                                 
             </div>
 			</div>
@@ -78,4 +100,12 @@
 	</div>
 </div>
 </body>
+<script src="../javascript/countriesStates.js"></script>
+<script language="javascript">
+	populateCountries("country", "state");
+</script>
+<script src="../javascript/countriesStates.js"></script>
+<script language="javascript">
+	populateCountries("countryC", "stateC");
+</script>
 </html>

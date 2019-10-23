@@ -2,40 +2,40 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 mongoose.set('useCreateIndex', true);
 
-const airportsSchema = new Schema({
+const employeesSchema = new Schema({
     id: {
         type: Number,
         required: true, 
         unique: true
     },
-    name: {
+    firstName:{
         type: String,
         required: true
     },
-    country: {
+    lastName: {
         type: String,
         required: true
     },
-    state: {
-        type:String,
+    type: {
+        type: String,
         required: true
     },
-    address: {
-        type:String,
+    hiringDate: {
+        type: Date,
+        required: true
+    },
+    jobArea: {
+        type: Object,
         required: true
     },
     email: {
-        type:String,
+        type: String,
         required: true
-    },
-    telephone: {
-        type: Number,
+    }, 
+    password: {
+        type: String,
         required: true
-    },
-    webPage:{
-        type:String,
-        require: true
     }
 });
 
-module.exports = mongoose.model("airports", airportsSchema);
+module.exports = mongoose.model("employees", employeesSchema);
