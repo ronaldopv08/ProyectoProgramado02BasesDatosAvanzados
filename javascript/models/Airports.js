@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-//mongoose.set('useCreateIndex', true);
+mongoose.set('useCreateIndex', true);
 
 const airportsSchema = new Schema({
     id: {
@@ -14,7 +14,7 @@ const airportsSchema = new Schema({
     },
     country: {
         type: String,
-        required: true, 
+        required: true
     },
     state: {
         type:String,
@@ -37,3 +37,5 @@ const airportsSchema = new Schema({
         require: true
     }
 });
+
+module.exports = mongoose.model("Airports", airportsSchema);
