@@ -55,13 +55,13 @@
             <a class="nav-link" id="form-tab" data-toggle="tab" href="#consult" role="tab" aria-controls="form" aria-selected="true">Consult</a>				   	
             </li>
             <li class="button">
-            <a href="../html/manager.html">Back</a>
+            <a href="../manager/manager.html">Back</a>
             </li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade show active" id="create" role="tabpanel" aria-labelledby="list-tab">
                 <label>Enter the clint information:</label>
-                <form>
+                <form action="manager/clients.html" method="POST">
                         Client ID: <br>
                         <input type="text" name="clientIdInput"><br>
                         First Name: <br>
@@ -76,7 +76,7 @@
                         <select id="countryCreate" name ="countryCreate"></select> </br></br>
                         State: <br><br>
                         <select name ="stateCreate" id ="stateCreate"></select>  </br> </br>
-                        <script src="../javascript/tools/countriesStates.js"></script>
+                        <script src="./tools/countriesStates.js"></script>
                         <script language="javascript">
                         populateCountries("countryCreate", "stateCreate");
                     </script>
@@ -108,7 +108,7 @@
                     <select id="countryModify" name ="countryModify"></select> </br></br>
                     State: <br><br> 
                     <select name ="stateModify" id ="stateModify"></select>  </br> </br>
-                    <script src="../javascript/tools/countriesStates.js"></script>
+                    <script src="./tools/countriesStates.js"></script>
                     <script language="javascript">
                     populateCountries("countryModify", "stateModify");
                 </script>

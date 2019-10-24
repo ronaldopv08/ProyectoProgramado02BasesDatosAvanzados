@@ -4,7 +4,7 @@ exports.createClients =  async (req, res) => {
     const clients = new clients(req.body);
     await clients.save((err, client)=>{
         if(err) console.log(err);
-        //res.redirect("/clients")
+        res.redirect("/clients")
     })
 }
 

@@ -3,19 +3,24 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const session = require('express-session');
-const mongoose = require('mongoose');
-const config = require('./configuration/connectDB');
 const app = express();
 const router = express.Router();
+var engine = require('consolidate');
+const connectDb = require('./configuration/server');
+const config = require('./configuration/connectDB');
+connectDb();
 
-const db = config.mongoURI;
+const clientsRoutes = require('./javascript/routes/clientsRoutes');
 
-module.exports= () =>{
-  mongoose
-    .connect(db, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
-    .then(() => console.log('MongoDB Connected...'))
-    .catch(err => console.log(err));
-}
+router.get('/clients', (req, res) => {
+  res.render('manager/clients.html');
+});
+router.post('manager/clients.html', (req,res) => {
+  console.log(req.body);
+  res.send('ok');
+});
+
+module.exports = router;
 
 // Routes
 /* const airportsRoutes = require('./javascript/routes/airportsRoutes');
@@ -39,13 +44,14 @@ purchasesRoutes(router)
 router.get('/purchases', purchasesRoutes);
 
 
-
-app.use(router); */
-
+*/
+app.use(router);
+app.use(express.static(__dirname + '/css'));
+app.use(express.static(__dirname + '/javascript'));
 app.listen(config.PORT, ()=> console.log(`Server on port ${config.PORT}`));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
-
+app.engine('html',engine.mustache);
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
