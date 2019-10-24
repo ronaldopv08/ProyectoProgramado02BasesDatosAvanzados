@@ -13,6 +13,7 @@ const flightsRoutes = require('../routes/flightsRoutes');
 const clientsRoutes = require('../routes/clientsRoutes');
 const purchasesRoutes = require('../routes/purchasesRoutes');
 
+
 module.exports= () =>{
   mongoose
     .connect(db, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
@@ -20,6 +21,7 @@ module.exports= () =>{
     .catch(err => console.log(err));
 }
 
+/*
 clientsRoutes(router)
 router.get('/clients', clientsRoutes);
 airportsRoutes(router)
@@ -34,5 +36,5 @@ purchasesRoutes(router)
 router.get('/purchases', purchasesRoutes);
 
 app.use(router);
-
+*/
 
