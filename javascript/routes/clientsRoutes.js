@@ -12,11 +12,11 @@ const router = express.Router();
 }
 */
 
-router.get('/clients/add', (req,res) => {
+router.get('/', (req,res) => {
     res.render('manager/clients.html');
 });
 
-router.post('./views/manager/clients.html', (req,res) => {
+router.post('/views/manager/clients', (req,res) => {
     console.log(req.body);
     res.send('ok');
 });

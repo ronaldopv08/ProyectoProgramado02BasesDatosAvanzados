@@ -8,17 +8,12 @@ const router = express.Router();
 var engine = require('consolidate');
 const connectDb = require('./configuration/server');
 const config = require('./configuration/connectDB');
+var clientsRoutes = require('./javascript/routes/clientsRoutes');
+const exphbs = require('express-handlebars');
 connectDb();
 
-const clientsRoutes = require('./javascript/routes/clientsRoutes');
 
-router.get('/clients', (req, res) => {
-  res.render('manager/clients.html');
-});
-router.post('manager/clients.html', (req,res) => {
-  console.log(req.body);
-  res.send('ok');
-});
+
 
 module.exports = router;
 
@@ -46,12 +41,20 @@ router.get('/purchases', purchasesRoutes);
 
 */
 app.use(router);
+app.use('/clients',clientsRoutes);
+app.post('/view/manager/clients',clientsRoutes);
 app.use(express.static(__dirname + '/css'));
 app.use(express.static(__dirname + '/javascript'));
 app.listen(config.PORT, ()=> console.log(`Server on port ${config.PORT}`));
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'html');
-app.engine('html',engine.mustache);
+app.engine('.hbs', exphbs({
+  defaultLayout: 'main',
+  layoutsDir: path.join(app.get('views'), 'layouts'),
+  partialsDir: path.join(app.get('views'), 'partials'),
+  extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+//app.engine('html',engine.mustache);
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use(session({
