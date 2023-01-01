@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ronaldopv08/ProyectoProgramado02BasesDatosAvanzados#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "config": "^3.2.3",
+    "config": "^3.3.8",
     "connect-flash": "^0.1.1",
     "consolidate": "^0.15.1",
     "express": "^4.17.1",
